@@ -1,0 +1,22 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{ this.character.fullName }}</mat-card-title>
+    <mat-card-subtitle>{{ this.character.family }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    class="card-image"
+    mat-card-image
+    src="{{ this.character.imageUrl }}"
+    loading="lazy"
+    width="200px"
+    height="200px"
+  />
+  <mat-card-content>
+    <p>lista con estilos guapos</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
