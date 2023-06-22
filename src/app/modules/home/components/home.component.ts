@@ -1,6 +1,6 @@
+import { Character } from 'src/app/interfaces/character';
+import { gotService } from 'src/app/services/got.service';
 import { Router } from '@angular/router';
-import { gotService } from './../../services/got.service';
-import { Character } from './../../interfaces/character.d';
 import { Component } from '@angular/core';
 
 @Component({
