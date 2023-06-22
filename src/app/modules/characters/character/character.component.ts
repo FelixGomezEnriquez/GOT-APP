@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class CharacterComponent {
   public characters: Character[] = [];
+  public charactersOriginal: Character[] = [];
 
   constructor(private gS: gotService) {}
 
@@ -23,5 +24,19 @@ export class CharacterComponent {
         console.log('ERO ERROR: ' + error);
       },
     });
+
+    //Añadimos los character a charOriginal que servira para acceder a todos siempre
+    this.charactersOriginal = this.characters;
+  }
+
+  onSearch(query: string) {
+    console.log(this.characters);
+    let filtrados = this.charactersOriginal.filter((character) => {
+      return character.fullName.toLowerCase().includes(query.toLowerCase());
+    });
+
+    this.characters = filtrados;
+    console.log(filtrados);
+    // Realiza la lógica de búsqueda y asigna los resultados a la propiedad 'characters'
   }
 }
