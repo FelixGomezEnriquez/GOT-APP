@@ -8,22 +8,6 @@
     background-color: rgba($color: #ebe6e6, $alpha: 0.3);
   }
 }
-.characters-grid {
-  margin: 10px;
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  min-height: 25vh;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -43,15 +27,15 @@
   justify-content: center;
   .carousel {
     background-color: gray;
-    width: 400px;
-    height: 300px;
+    width: 900px;
+    height: 400px;
     .carousel-img {
       display: flex;
       justify-content: center;
       img {
-        width: 300px;
-        height: 300px;
+        height: 400px;
         object-fit: fill;
+        cursor: pointer;
       }
     }
   }

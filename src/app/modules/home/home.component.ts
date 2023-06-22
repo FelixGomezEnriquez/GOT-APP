@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { gotService } from './../../services/got.service';
 import { Character } from './../../interfaces/character.d';
 import { Component } from '@angular/core';
@@ -9,21 +10,22 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   characters: Character[] = [];
-  images: string[] = [];
-  constructor(private gS: gotService) {}
+  constructor(private gS: gotService, private router: Router) {}
 
   ngOnInit(): void {
-    this.gS.allCharacters().subscribe({
+    this.gS.getAllCharacters().subscribe({
       next: (data: any) => {
         data.forEach((element: any) => {
           this.characters.push(element);
-          this.images.push(element.imageUrl);
         });
       },
       error: (error) => {
         console.log('ERO ERROR: ' + error);
       },
     });
-    console.log(this.images);
+  }
+
+  goToCharacter(character: Character): void {
+    this.router.navigate(['character', character.id]);
   }
 }

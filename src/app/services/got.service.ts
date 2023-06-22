@@ -8,7 +8,10 @@ import { Observable } from 'rxjs';
 export class gotService {
   constructor(private http: HttpClient) {}
 
-  allCharacters(): Observable<any> {
+  getAllCharacters(): Observable<any> {
     return this.http.get('https://thronesapi.com/api/v2/Characters');
+  }
+  getCharacterById(id: number): Observable<any> {
+    return this.http.get(`https://thronesapi.com/api/v2/Characters/${id}`);
   }
 }

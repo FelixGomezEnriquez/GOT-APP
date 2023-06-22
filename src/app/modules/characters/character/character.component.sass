@@ -1,0 +1,14 @@
+.characters-grid
+  margin: 10px
+  display: grid
+  gap: 20px
+  justify-content: center
+  align-items: center
+  grid-template-columns: repeat(3, 1fr)
+  min-height: 25vh
+
+  @media (max-width: 768px)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (max-width: 500px)
+    grid-template-columns: repeat(1, 1fr)
