@@ -19,7 +19,6 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.authService.getAuthState().pipe(
       map((user) => {
-        console.log(user);
         if (user) {
           // El usuario está autenticado, permite el acceso
           return true;

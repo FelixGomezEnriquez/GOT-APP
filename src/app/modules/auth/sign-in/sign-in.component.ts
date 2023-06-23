@@ -7,10 +7,17 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
-  constructor(public auth: AuthService, public router: Router) {
+  constructor(public auth: AuthService, public router: Router) {}
+
+  signWithEmail(email: string, password: string): void {
+    this.auth.signInWithEmail(email, password);
+  }
+
+  signWithGoogle(): void {
     this.auth.signInWithGoogle().then((e) => {
-      console.log(e);
-      this.router.navigate(['/home']);
+      if (e) {
+        this.router.navigate(['/home']);
+      }
     });
   }
 }
