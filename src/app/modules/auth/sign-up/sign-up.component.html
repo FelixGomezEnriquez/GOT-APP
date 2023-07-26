@@ -1,1 +1,31 @@
-<p>sign-up works!</p>
+<div class="body">
+  <div class="form-container">
+    <h3>Sign Up</h3>
+
+    <input type="text" placeholder="Username" #userName required />
+
+    <input type="password" placeholder="Password" #userPassword required />
+
+    <button
+      type="button"
+      (click)="signUpWithEmail(userName.value, userPassword.value)"
+    >
+      Register
+    </button>
+    <span class="or">Or</span>
+
+    <button type="button" (click)="signWithGoogle()">
+      <i class="bi bi-google"></i>
+      Continue with Google
+    </button>
+
+    <span routerLink="/forgot-password">Forgot Password?</span>
+
+    <span
+      >Have an account already?<a class="redirect" routerLink="/">
+        Sign In</a
+      ></span
+    >
+  </div>
+</div>
+<app-footer></app-footer>

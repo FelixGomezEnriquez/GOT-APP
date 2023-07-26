@@ -12,42 +12,29 @@ export class AuthService {
   // Métodos de autenticación
 
   // Registro de usuario con correo electrónico y contraseña
-  signUpWithEmail(email: string, password: string): Promise<UserCredential> {
+  signUpWithEmail(email: string, password: string): Promise<any> {
     return this.auth
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential: UserCredential) => {
+        console.log(userCredential);
         // Obtener el usuario actual
         const user = userCredential.user;
-
-        // Verificar si el correo electrónico está verificado
-        if (user!.emailVerified) {
-          // Crear la variable en el LocalStorage
-          localStorage.setItem('user', JSON.stringify(user));
-        } else {
-          // El correo electrónico no está verificado, no se crea la variable en el LocalStorage
-          alert('El correo electrónico no está verificado');
-        }
-
+        // Crear la variable en el LocalStorage
+        localStorage.setItem('user', JSON.stringify(user));
         return userCredential;
       });
   }
 
   // Inicio de sesión con correo electrónico y contraseña
-  signInWithEmail(email: string, password: string): Promise<UserCredential> {
+  signInWithEmail(email: string, password: string): Promise<any> {
     return this.auth
       .signInWithEmailAndPassword(email, password)
       .then((userCredential: UserCredential) => {
         // Obtener el usuario actual
         const user = userCredential.user;
 
-        // Verificar si el correo electrónico está verificado
-        if (user!.emailVerified) {
-          // Crear la variable en el LocalStorage
-          localStorage.setItem('user', JSON.stringify(user));
-        } else {
-          // El correo electrónico no está verificado, no se crea la variable en el LocalStorage
-          // Puedes mostrar un mensaje o realizar alguna otra acción en este caso
-        }
+        // Crear la variable en el LocalStorage
+        localStorage.setItem('user', JSON.stringify(user));
 
         return userCredential;
       });
@@ -62,14 +49,7 @@ export class AuthService {
         // Obtener el usuario actual
         const user = userCredential.user;
 
-        // Verificar si el correo electrónico está verificado
-        if (user!.emailVerified) {
-          // Crear la variable en el LocalStorage
-          localStorage.setItem('user', JSON.stringify(user));
-        } else {
-          // El correo electrónico no está verificado, no se crea la variable en el LocalStorage
-          // Puedes mostrar un mensaje o realizar alguna otra acción en este caso
-        }
+        localStorage.setItem('user', JSON.stringify(user));
 
         return userCredential;
       });
@@ -95,6 +75,7 @@ export class AuthService {
 
   // Obtener el estado de autenticación actual
   getAuthState(): Observable<User | null> {
+    console.log(this.auth.authState);
     return this.auth.authState;
   }
   // Returns true when user is looged in and email is verified

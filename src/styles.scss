@@ -2,6 +2,7 @@
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
 // Plus imports for other components in your app.
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -47,4 +48,28 @@ body {
 }
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+.green-snackbar {
+  --mdc-snackbar-container-color: rgb(65, 252, 134) !important;
+
+  background: rgb(65, 252, 134) !important;
+  color: white;
+}
+.green-snackbar button {
+  background-color: rgb(65, 252, 134);
+  color: white !important;
+  border: none;
+}
+
+.red-snackbar {
+  --mdc-snackbar-container-color: #f44336 !important;
+
+  background: #f44336 !important;
+  color: white;
+}
+.red-snackbar button {
+  background-color: #f44336;
+  color: white !important;
+  border: none;
+}
