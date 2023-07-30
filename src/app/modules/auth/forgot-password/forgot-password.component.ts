@@ -16,7 +16,24 @@ export class ForgotPasswordComponent {
   ) {}
   sendEmail(email: string): void {
     console.log(email);
-    this.auth.ForgotPassword(email);
+    this.auth
+      .ForgotPassword(email)
+      .then((user) => {
+        if (user) {
+          this.router.navigate(['/']);
+          this.openSnackBar(
+            'Password reset email sent, check your inbox.',
+            'X',
+            ['green-snackbar']
+          );
+        } else {
+          throw new Error('Email no válido');
+        }
+      })
+      .catch((error) => {
+        this.openSnackBar(error, 'X', ['red-snackbar']);
+        console.log(error);
+      });
   }
   openSnackBar(message: string, action: string, style: string[]): void {
     this._snackBar.open(message, action, {

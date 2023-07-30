@@ -49,6 +49,8 @@ export class AuthService {
         // Obtener el usuario actual
         const user = userCredential.user;
 
+        console.log(user);
+
         localStorage.setItem('user', JSON.stringify(user));
 
         return userCredential;
@@ -66,10 +68,11 @@ export class AuthService {
     return this.auth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        return true;
       })
-      .catch((error) => {
-        window.alert(error);
+      .catch((error: any) => {
+        console.log(error);
+        return false;
       });
   }
 

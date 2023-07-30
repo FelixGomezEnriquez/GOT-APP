@@ -55,6 +55,7 @@ body {
 
   background: rgb(65, 252, 134) !important;
   color: white;
+  border-radius: 50px;
 }
 .green-snackbar button {
   background-color: rgb(65, 252, 134);
@@ -67,6 +68,7 @@ body {
 
   background: #f44336 !important;
   color: white;
+  border-radius: 50px;
 }
 .red-snackbar button {
   background-color: #f44336;
@@ -74,7 +76,7 @@ body {
   border: none;
 }
 
-.body {
+.auth-container {
   font-family: Nunito;
 
   display: flex;

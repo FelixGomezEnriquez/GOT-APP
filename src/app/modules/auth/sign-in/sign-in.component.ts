@@ -35,6 +35,8 @@ export class SignInComponent {
 
   signWithGoogle(): void {
     this.auth.signInWithGoogle().then((user) => {
+      console.log(user);
+
       if (user) {
         this.router.navigate(['/home']);
         this.openSnackBar('Inicio de sesion exitoso', 'X', ['green-snackbar']);
