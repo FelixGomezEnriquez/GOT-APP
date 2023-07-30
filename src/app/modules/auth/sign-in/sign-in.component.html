@@ -1,12 +1,33 @@
 <div class="body">
-  <div class="form-container">
-    <h3>Sign In</h3>
+  <video autoplay muted loop>
+    <source src="assets/videos/back.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-    <input type="text" placeholder="Username" #userName required />
+  <form action="#" class="form-container">
+    <h3 class="form-header">Sign In</h3>
+    <div class="mb-3">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Username"
+        #userName
+        required
+      />
+    </div>
 
-    <input type="password" placeholder="Password" #userPassword required />
+    <div class="mb-3">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Password"
+        #userPassword
+        required
+      />
+    </div>
 
     <button
+      class="btn btn-outline-dark"
       type="button"
       (click)="signWithEmail(userName.value, userPassword.value)"
     >
@@ -14,18 +35,21 @@
     </button>
     <span class="or">Or</span>
 
-    <button type="button" (click)="signWithGoogle()">
-      <i class="bi bi-google"></i>
-      Log in with Google
+    <button
+      class="btn btn-outline-dark"
+      type="button"
+      (click)="signWithGoogle()"
+    >
+      Log in with Google <i class="bi bi-google"></i>
     </button>
 
-    <span routerLink="/forgot-password">Forgot Password?</span>
+    <a class="redirect" routerLink="/forgot-password">Forgot You Password?</a>
 
     <span
       >Don't have an account?<a class="redirect" routerLink="/register">
         Sign Up</a
       ></span
     >
-  </div>
+  </form>
 </div>
 <app-footer></app-footer>

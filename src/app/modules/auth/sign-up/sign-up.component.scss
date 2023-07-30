@@ -1,15 +1,8 @@
-.body {
-  display: flex;
-  justify-content: center;
-  background-color: aqua;
+video {
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
   min-height: 100%;
-  padding: 20px 20px;
-}
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 500px;
-  background-color: red;
 }
