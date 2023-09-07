@@ -1,0 +1,52 @@
+[debug] [2023-09-07T12:18:04.413Z] ----------------------------------------------------------------------
+[debug] [2023-09-07T12:18:04.414Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felix\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-09-07T12:18:04.415Z] CLI Version:   12.4.0
+[debug] [2023-09-07T12:18:04.415Z] Platform:      win32
+[debug] [2023-09-07T12:18:04.415Z] Node Version:  v18.15.0
+[debug] [2023-09-07T12:18:04.416Z] Time:          Thu Sep 07 2023 14:18:04 GMT+0200 (hora de verano de Europa central)
+[debug] [2023-09-07T12:18:04.416Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-07T12:18:04.468Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-07T12:18:04.469Z] > authorizing via signed-in user (felixmihmo@gmail.com)
+[debug] [2023-09-07T12:18:04.469Z] [iam] checking project got-app-5e87f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-07T12:18:04.471Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/got-app-5e87f:testIamPermissions [none]
+[debug] [2023-09-07T12:18:04.471Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/got-app-5e87f:testIamPermissions x-goog-quota-user=projects/got-app-5e87f
+[debug] [2023-09-07T12:18:04.471Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/got-app-5e87f:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-07T12:18:05.191Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/got-app-5e87f:testIamPermissions 200
+[debug] [2023-09-07T12:18:05.192Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/got-app-5e87f:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-07T12:18:05.193Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/got-app-5e87f [none]
+[debug] [2023-09-07T12:18:05.456Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/got-app-5e87f 200
+[debug] [2023-09-07T12:18:05.456Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/got-app-5e87f {"projectId":"got-app-5e87f","projectNumber":"155831648687","displayName":"GOT-APP","name":"projects/got-app-5e87f","resources":{"hostingSite":"got-app-5e87f"},"state":"ACTIVE","etag":"1_eada36dc-55be-4f6c-b684-aa1634e6dc81"}
+[info] 
+[info] === Deploying to 'got-app-5e87f'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-09-07T12:18:05.461Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/got-app-5e87f/versions [none]
+[debug] [2023-09-07T12:18:05.461Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/got-app-5e87f/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-09-07T12:18:06.646Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/got-app-5e87f/versions 200
+[debug] [2023-09-07T12:18:06.646Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/got-app-5e87f/versions {"name":"projects/155831648687/sites/got-app-5e87f/versions/a0e216653210af7b","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[got-app-5e87f]: beginning deploy... 
+[info] i  hosting[got-app-5e87f]: found 13 files in dist/got-app 
+[debug] [2023-09-07T12:18:06.653Z] [hosting] uploading with 200 concurrency
+[debug] [2023-09-07T12:18:07.763Z] [hosting] hash cache [ZGlzdFxnb3QtYXBw] stored for 13 files
+[debug] [2023-09-07T12:18:07.763Z] [hosting][hash queue][FINAL] {"max":1105,"min":2,"avg":94.76923076923077,"active":0,"complete":13,"success":13,"errored":0,"retried":0,"total":13,"elapsed":1109}
+[debug] [2023-09-07T12:18:07.764Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/155831648687/sites/got-app-5e87f/versions/a0e216653210af7b:populateFiles [none]
+[debug] [2023-09-07T12:18:07.764Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/155831648687/sites/got-app-5e87f/versions/a0e216653210af7b:populateFiles {"files":{"/favicon.ico":"2c19690e9587bae12f419b34d2edeecc76808099540a9c9f4ea6194116cfc8f7","/169.b4014ee638907a1c.js":"279fa857e75f626b2b28853bb6158a27635fa0f8484d926756ce0476560e36d0","/568.fbe46f2ae1fe9420.js":"2840108724df9ea4cc347250ed5c9d395d957db93dfb7e3b213defed265c0397","/3rdpartylicenses.txt":"a6d08109fbab9c8ab687ee92a6005db43819c25638c7bf5a25dd792d81dd8576","/runtime.3714e46168ae083c.js":"c20ceeef56d08bd35b859ed12957f47982ae551877b0b2c40593ebc3a0e4fa36","/index.html":"1cb61dd4df81206b0bfc7d62ee34226cc0c262d67b00351c3b4ba19f1729743d","/polyfills.70bc332e6badf3cc.js":"ca3b022f656a793b765aeeec928dcc881d4291cd025b829e5364e6f305028fde","/945.aa80eab28cd74b58.js":"095d932f105ad0f3476d6d9322b44b22a01d93644882c72a147e5e88a449ea40","/bootstrap-icons.02685dabe0850e40.woff2":"5201f8bb938cc045e1fe0baba60ef2fa55bff02bdba0450ea9fdba94c86ddf6c","/bootstrap-icons.8463cb1e163733b5.woff":"29448e430cf8f4673d70aaaf938a578153074c7b8d631a47bc0121a0f2149dcb","/styles.507f162bd5222301.css":"d08cf7a1bd2c6f604e5c67eae2e4dec39aaf1c500fc0d36f09bdd6d75765a0a7","/main.6eacd024fc96dee0.js":"4279e5260c2c493e2cd46e696d61f25f143ae98d20d667a355b56c0dc65a55b8","/assets/videos/back.webm":"516f2ee8c550426dda558e9cb691ca55dce642d96e29fb373aa8a30888c8a44c"}}
+[debug] [2023-09-07T12:18:08.614Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/155831648687/sites/got-app-5e87f/versions/a0e216653210af7b:populateFiles 200
+[debug] [2023-09-07T12:18:08.614Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/155831648687/sites/got-app-5e87f/versions/a0e216653210af7b:populateFiles {"uploadRequiredHashes":["d08cf7a1bd2c6f604e5c67eae2e4dec39aaf1c500fc0d36f09bdd6d75765a0a7","4279e5260c2c493e2cd46e696d61f25f143ae98d20d667a355b56c0dc65a55b8","1cb61dd4df81206b0bfc7d62ee34226cc0c262d67b00351c3b4ba19f1729743d","279fa857e75f626b2b28853bb6158a27635fa0f8484d926756ce0476560e36d0","095d932f105ad0f3476d6d9322b44b22a01d93644882c72a147e5e88a449ea40","516f2ee8c550426dda558e9cb691ca55dce642d96e29fb373aa8a30888c8a44c","c20ceeef56d08bd35b859ed12957f47982ae551877b0b2c40593ebc3a0e4fa36"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files"}
+[debug] [2023-09-07T12:18:08.616Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/d08cf7a1bd2c6f604e5c67eae2e4dec39aaf1c500fc0d36f09bdd6d75765a0a7 [none]
+[debug] [2023-09-07T12:18:08.616Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/d08cf7a1bd2c6f604e5c67eae2e4dec39aaf1c500fc0d36f09bdd6d75765a0a7 [stream]
+[debug] [2023-09-07T12:18:08.616Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/4279e5260c2c493e2cd46e696d61f25f143ae98d20d667a355b56c0dc65a55b8 [none]
+[debug] [2023-09-07T12:18:08.617Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/4279e5260c2c493e2cd46e696d61f25f143ae98d20d667a355b56c0dc65a55b8 [stream]
+[debug] [2023-09-07T12:18:08.617Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/1cb61dd4df81206b0bfc7d62ee34226cc0c262d67b00351c3b4ba19f1729743d [none]
+[debug] [2023-09-07T12:18:08.617Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/1cb61dd4df81206b0bfc7d62ee34226cc0c262d67b00351c3b4ba19f1729743d [stream]
+[debug] [2023-09-07T12:18:08.618Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/279fa857e75f626b2b28853bb6158a27635fa0f8484d926756ce0476560e36d0 [none]
+[debug] [2023-09-07T12:18:08.618Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/279fa857e75f626b2b28853bb6158a27635fa0f8484d926756ce0476560e36d0 [stream]
+[debug] [2023-09-07T12:18:08.618Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/095d932f105ad0f3476d6d9322b44b22a01d93644882c72a147e5e88a449ea40 [none]
+[debug] [2023-09-07T12:18:08.618Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/095d932f105ad0f3476d6d9322b44b22a01d93644882c72a147e5e88a449ea40 [stream]
+[debug] [2023-09-07T12:18:08.619Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/516f2ee8c550426dda558e9cb691ca55dce642d96e29fb373aa8a30888c8a44c [none]
+[debug] [2023-09-07T12:18:08.619Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/516f2ee8c550426dda558e9cb691ca55dce642d96e29fb373aa8a30888c8a44c [stream]
+[debug] [2023-09-07T12:18:08.620Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/c20ceeef56d08bd35b859ed12957f47982ae551877b0b2c40593ebc3a0e4fa36 [none]
+[debug] [2023-09-07T12:18:08.620Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/got-app-5e87f/versions/a0e216653210af7b/files/c20ceeef56d08bd35b859ed12957f47982ae551877b0b2c40593ebc3a0e4fa36 [stream]
+[debug] [2023-09-07T12:18:08.621Z] [hosting][populate queue][FINAL] {"max":853,"min":853,"avg":853,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":859}
+[debug] [2023-09-07T12:18:08.621Z] [hosting] uploads queued: 7
