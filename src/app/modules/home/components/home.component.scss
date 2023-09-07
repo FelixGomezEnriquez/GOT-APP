@@ -25,17 +25,37 @@
 .carousel-container {
   display: flex;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
   .carousel {
-    background-color: gray;
     width: 900px;
     height: 400px;
+    @media (max-width: 760px) {
+      max-width: 300px;
+    }
     .carousel-img {
       display: flex;
       justify-content: center;
       img {
         height: 400px;
         object-fit: fill;
+      }
+      :hover {
         cursor: pointer;
+      }
+    }
+    .carousel-caption {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0px 1.1em 0px 1.1em;
+      }
+      p {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0px 1.1em 0px 1.1em;
       }
     }
   }
