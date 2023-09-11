@@ -11,6 +11,7 @@ import { CharacterCardComponent } from './character-card/character-card.componen
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { SuggestFormComponent } from './suggest-form/suggest-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatSnackBarModule,
+    LayoutModule,
   ],
   exports: [
     CharacterCardComponent,

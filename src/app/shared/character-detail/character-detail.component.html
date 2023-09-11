@@ -1,3 +1,17 @@
-<ng-container>
-  <p>{{ character.fullName }}</p>
-</ng-container>
+<app-header></app-header>
+<div class="character-page">
+  <div class="character-detail">
+    <div class="card">
+      <img src="{{ character.imageUrl }}" alt="Nombre del Personaje" />
+      <h2>Character Data</h2>
+      <p><strong>Name:</strong> {{ character.fullName }}</p>
+      <p><strong>Family:</strong> {{ character.family }}</p>
+
+      <p><strong>Titles:</strong> {{ character.title }}</p>
+    </div>
+  </div>
+
+  <app-suggest-form></app-suggest-form>
+</div>
+
+<app-footer></app-footer>
