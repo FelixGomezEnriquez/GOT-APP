@@ -51,14 +51,13 @@ body {
 @import "bootstrap/scss/bootstrap";
 
 .green-snackbar {
-  --mdc-snackbar-container-color: rgb(65, 252, 134) !important;
+  --mdc-snackbar-container-color: rgb(71, 175, 109) !important;
 
-  background: rgb(65, 252, 134) !important;
   color: white;
   border-radius: 50px;
 }
 .green-snackbar button {
-  background-color: rgb(65, 252, 134);
+  background-color: rgb(48, 119, 74);
   color: white !important;
   border: none;
 }

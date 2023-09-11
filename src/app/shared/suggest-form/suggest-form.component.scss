@@ -1,0 +1,14 @@
+.suggestForm {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+}
+mat-form-field {
+  width: 100%;
+}

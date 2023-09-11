@@ -1,0 +1,32 @@
+<div class="suggestForm">
+  <h2>SEND YOUR SUGGESTIONS</h2>
+  <form [formGroup]="suggestForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pepe@example.com"
+          [formControl]="this.suggestForm.controls.email"
+          required
+        />
+        <mat-error *ngIf="this.suggestForm.controls.email.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label hintLabel="Min 10 characters">Message</mat-label>
+        <textarea
+          #message
+          matInput
+          [formControl]="this.suggestForm.controls.message"
+          maxlength="300"
+        ></textarea>
+        <mat-hint align="end">{{ message.value.length }}/300</mat-hint>
+      </mat-form-field>
+    </div>
+    <button mat-stroked-button>Send</button>
+  </form>
+</div>
