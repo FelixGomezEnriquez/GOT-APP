@@ -1,14 +1,25 @@
 <ng-container class="search-bar">
-  <p>Busca tu favorito!</p>
-  <mat-form-field class="input">
-    <mat-label>Personaje Favorito</mat-label>
-    <input
-      type="text"
-      matInput
-      placeholder="Jon Snow"
-      value=""
-      [(ngModel)]="query"
-      (keyup)="onSearch()"
-    />
-  </mat-form-field>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Search your favourite! </mat-panel-title>
+        <mat-panel-description>
+          Type the name of your favourite
+          <mat-icon>search</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field class="input">
+        <mat-label>Personaje Favorito</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Jon Snow"
+          value=""
+          [(ngModel)]="query"
+          (keyup)="onSearch()"
+        />
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
 </ng-container>

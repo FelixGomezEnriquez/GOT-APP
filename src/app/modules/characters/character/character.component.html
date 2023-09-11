@@ -7,5 +7,9 @@
     [character]="character"
   >
   </app-character-card>
+
+  <div *ngIf="characters.length <= 0" style="grid-column: 2">
+    <p>No hay resultados de busqueda! <mat-icon>warning</mat-icon></p>
+  </div>
 </section>
 <app-footer></app-footer>

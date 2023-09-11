@@ -6,6 +6,7 @@
     font-size: 3em;
     font-weight: 400;
     background-color: rgba($color: #ebe6e6, $alpha: 0.3);
+    margin: 0px;
   }
 }
 .intro-section {
@@ -25,7 +26,7 @@
 .carousel-container {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #f9f7f7;
   .carousel {
     width: 900px;
     height: 400px;
@@ -36,8 +37,9 @@
       display: flex;
       justify-content: center;
       img {
+        width: 400px;
         height: 400px;
-        object-fit: fill;
+        object-fit: cover;
       }
       :hover {
         cursor: pointer;
