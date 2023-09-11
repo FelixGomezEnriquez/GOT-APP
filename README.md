@@ -9,6 +9,8 @@
 
 - Autenticación de Usuarios: Utiliza Firebase Authentication para permitir que los usuarios creen cuentas, inicien sesión y gestionen sus perfiles de usuario.
 
+- Autenticación de Usuarios a traves de Google: Utiliza Firebase Authentication para permitir que los usuarios inicien sesión a traves de su cuenta de google.
+
 - Despliegue Sencillo: Utiliza Firebase Hosting para implementar y alojar la aplicación web de manera rápida y sencilla.
 
 - Exploración de Personajes: Integra la API de Game of Thrones para obtener datos detallados de los personajes, incluyendo sus nombres, casas y más.
