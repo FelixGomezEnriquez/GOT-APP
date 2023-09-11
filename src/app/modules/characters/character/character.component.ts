@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Character } from 'src/app/interfaces/character';
 import { gotService } from './../../../services/got.service';
 import { Component } from '@angular/core';
@@ -11,7 +12,7 @@ export class CharacterComponent {
   public characters: Character[] = [];
   public charactersOriginal: Character[] = [];
 
-  constructor(private gS: gotService) {}
+  constructor(private gS: gotService, private router: Router) {}
 
   ngOnInit(): void {
     this.gS.getAllCharacters().subscribe({
@@ -38,5 +39,8 @@ export class CharacterComponent {
     this.characters = filtrados;
     console.log(filtrados);
     // Realiza la lógica de búsqueda y asigna los resultados a la propiedad 'characters'
+  }
+  goToCharacter(character: Character): void {
+    this.router.navigate(['character', character.id]);
   }
 }

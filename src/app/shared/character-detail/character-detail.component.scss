@@ -18,6 +18,9 @@
 
 .character-detail img {
   width: 400px;
+  @media (max-width: 760px) {
+    max-width: 300px;
+  }
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 1rem;
